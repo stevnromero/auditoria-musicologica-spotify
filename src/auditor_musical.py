@@ -115,9 +115,9 @@ def ejecutar_auditoria(ruta_csv: str = "data/playlist_auditada_231.csv") -> None
 
     infracciones = (df_auditado["Categoria_Forense"] == "Lista Negra (Veto Absoluto)").sum()
     print("=== VEREDICTO FINAL CONSOLIDADO ===")
-    print("• Eje Evaluador 1 (Steven) : 97.6 / 100")
+    print("• Eje Evaluador 1 (Steven) : 97.8 / 100")
     print("• Eje Evaluador 2 (Jairo)  : 94.2 / 100")
-    print("• Puntaje Global Final     : 95.9 / 100 (9.6 / 10 — HALL OF FAME ABSOLUTO)")
+    print("• Puntaje Global Final     : 96.0 / 100 (9.6 / 10 — HALL OF FAME ABSOLUTO)")
     print(f"• Infracciones Lista Negra : {infracciones} pistas (0.0 %)")
     print("=" * 68)
 
