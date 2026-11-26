@@ -1,10 +1,5 @@
 # 🎵 Auditoría Musicológica Forense y Perfilamiento Conductual de Preferencias Sonoras (N = 210 Pistas)
 
-![Python](https://shields.io)
-![Jupyter](https://shields.io)
-![Pandas](https://shields.io)
-![Veredicto](https://shields.io)
-![Normas](https://shields.io)
 
 **Autores:** Steven & Jairo  
 **Unidad Académica:** Proyecto de Ciencia de Datos y Programación Aplicada (Primer Semestre)  
