@@ -69,6 +69,6 @@ python src/auditor_musical.py
 
 American Psychological Association. (2020). *Publication manual of the American Psychological Association* (7.ª ed.). https://doi.org
 
-Jairo, & Steven. (2026). *Auditoría musicológica forense y depuración de biblioteca digital en Spotify (N = 231)* [Archivo de registro documental y dictamen pericial Ed. 4.5 Definitiva]. Laboratorio de Perfilamiento Conductual y Curaduría Auditiva.
+Jairo, & Steven. (2026). [*Auditoría musicológica forense y depuración de biblioteca digital en Spotify (N = 231)* [Archivo de registro documental y dictamen pericial Ed. 4.5 Definitiva]](docs/Dictamen_Pericial_Playlist_Ed_4_5-v2.pdf). Laboratorio de Perfilamiento Conductual y Curaduría Auditiva.
 
 Rentfrow, P. J., & Gosling, S. D. (2003). The do re mi's of everyday life: The structure and personality correlates of music preferences. *Journal of Personality and Social Psychology*, *84*(6), 1236–1256. https://doi.org
