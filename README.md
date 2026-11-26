@@ -2,15 +2,15 @@
 
 **Autores:** Steven Romero & Jairo  
 **Contexto:** Proyecto de Ciencia de Datos y Programación Aplicada — Primer Semestre (UNAD)  
-**Versión:** Edición 4.5 Definitiva  
+**Versión:** Edición 4.6 Definitiva  
 
 ---
 
 ## 📌 1. ¿De qué trata este proyecto?
 
-Este repositorio analiza una playlist de Spotify de **231 canciones** y **184 artistas** aplicando métricas acústicas y Python, alcanzando una puntuación consolidada de **`9.6 / 10`**. 
+Este repositorio analiza una playlist de Spotify de **231 canciones** y **185 artistas** aplicando métricas acústicas y Python, alcanzando una puntuación consolidada de **`96.2 / 100` (`9.6 / 10`)** tras integrar *"Eres para Mí"* (Julieta Venegas & Ana Tijoux) y depurar *"LUNA"* (Feid). 
 
-Puedes consultar la estructura completa, los resultados detallados y el código del proyecto directamente en el repositorio de [auditoria-musicologica-spotify](https://github.com/stevnromero/auditoria-musicologica-spotify.git).
+Puedes consultar la estructura completa, los resultados detallados y el código del proyecto directamente en el repositorio de [auditoria-musicologica-spotify](https://github.com).
 
 ## 📝 2. Nota de Autoría
 
