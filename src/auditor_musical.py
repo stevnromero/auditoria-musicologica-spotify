@@ -1,5 +1,7 @@
+
 import os
 import sys
+import glob
 import pandas as pd
 
 
@@ -54,13 +56,39 @@ def clasificar_pista(fila: pd.Series) -> dict:
         return {"Eje_Steven": 97.2, "Eje_Jairo": 93.5, "Categoria_Forense": "Hall of Fame (Consolidado)"}
 
 
+def buscar_csv(ruta_sugerida: str) -> str:
+    """Busca el CSV en rutas comunes del proyecto automáticamente."""
+    if os.path.exists(ruta_sugerida):
+        return ruta_sugerida
+
+    posibles_rutas = [
+        "data/playlist_auditada_231.csv",
+        "../data/playlist_auditada_231.csv",
+        "playlist_auditada_231.csv"
+    ]
+    for ruta in posibles_rutas:
+        if os.path.exists(ruta):
+            return ruta
+
+    # Busca cualquier archivo .csv en la carpeta actual o en data/
+    csv_encontrados = glob.glob("data/*.csv") + glob.glob("../data/*.csv") + glob.glob("*.csv")
+    if csv_encontrados:
+        return csv_encontrados[0]
+
+    return ""
+
+
 def ejecutar_auditoria(ruta_csv: str = "data/playlist_auditada_231.csv") -> None:
     """Ejecuta el flujo completo de auditoría musicológica forense por consola."""
-    if not os.path.exists(ruta_csv):
-        print(f"[ERROR] No se encontró el archivo CSV en la ruta: {ruta_csv}")
+    ruta_real = buscar_csv(ruta_csv)
+
+    if not ruta_real:
+        print("[ERROR] No se encontró ningún archivo .csv en la carpeta actual ni en 'data/'.")
+        print("Asegúrate de tener tu CSV dentro de la carpeta 'data/' o junto a este script.")
         sys.exit(1)
 
-    df = pd.read_csv(ruta_csv)
+    print(f"[OK] Leyendo archivo: {ruta_real}\n")
+    df = pd.read_csv(ruta_real)
     resultados = df.apply(clasificar_pista, axis=1, result_type="expand")
     df_auditado = pd.concat([df, resultados], axis=1)
 
@@ -71,7 +99,7 @@ def ejecutar_auditoria(ruta_csv: str = "data/playlist_auditada_231.csv") -> None
     print("  DICTAMEN PERICIAL CONSOLIDADO — EDICIÓN 4.5 DEFINITIVA (N = 231)")
     print("=" * 68)
     print(f"Pistas activas auditadas : {len(df_auditado)}")
-    print(f"Variables por registro   : {df_auditado.shape}\n")
+    print(f"Variables por registro   : {df_auditado.shape[1]}\n")
 
     if metricas_disponibles:
         print("=== TELEMETRÍA ACÚSTICA DESCRIPTIVA (PROMEDIOS) ===")
@@ -95,5 +123,5 @@ def ejecutar_auditoria(ruta_csv: str = "data/playlist_auditada_231.csv") -> None
 
 
 if __name__ == "__main__":
-    ruta_entrada = sys.argv if len(sys.argv) > 1 else "data/playlist_auditada_231.csv"
+    ruta_entrada = sys.argv[1] if len(sys.argv) > 1 else "data/playlist_auditada_231.csv"
     ejecutar_auditoria(ruta_entrada)
