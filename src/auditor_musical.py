@@ -128,6 +128,11 @@ def ejecutar_auditoria(ruta_csv: str = "data/playlist_auditada_238_ed47.csv") ->
 
 
 if __name__ == "__main__":
-    ruta_entrada = sys.argv if len(sys.argv) > 1 else "data/playlist_auditada_238_ed47.csv"
-    ejecutar_auditoria(ruta_entrada)
+    # Evita capturar argumentos internos de Jupyter/Colab (-f kernel.json)
+    es_notebook = "ipykernel" in sys.modules or "google.colab" in sys.modules
+    if not es_notebook and len(sys.argv) > 1:
+        ruta_entrada = sys.argv[1]
+    else:
+        ruta_entrada = "data/playlist_auditada_238_ed47.csv"
 
+    ejecutar_auditoria(ruta_entrada)
